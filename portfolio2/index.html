@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flourish Okafor | Portfolio</title>
+  <link rel="icon" href="pic.jpg">
+  <style>
+    /* GLOBAL RESET */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(-45deg, #141E30, #243B55, #41295a, #2F0743);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    html { scroll-behavior: smooth; }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* NAVIGATION */
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%;
+      background: rgba(0,0,0,0.6); backdrop-filter: blur(10px);
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 5%; z-index: 1000;
+    }
+    nav h1 { font-size: 1.5rem; color: #ff8a00; }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; }
+    nav ul li a {
+      transition: color 0.3s ease;
+      font-weight: 500;
+    }
+    nav ul li a:hover { color: #e52e71; }
+
+    /* HERO */
+    #hero {
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      padding: 6rem 5% 2rem; flex-wrap: wrap; gap: 2rem;
+    }
+    .hero-text { flex: 1 1 400px; }
+    .hero-text h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .hero-text p { font-size: 1.2rem; margin-bottom: 2rem; }
+    .btn {
+      background: linear-gradient(45deg, #ff8a00, #e52e71);
+      padding: 0.7rem 1.5rem; border-radius: 30px; color: white; font-weight: bold;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+    .btn:hover { transform: translateY(-3px); }
+    .hero-image img {
+      width: 280px; height: 280px; object-fit: cover;
+      border-radius: 50%; border: 5px solid rgba(255,255,255,0.2);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+      transition: transform 0.4s ease;
+    }
+    .hero-image img:hover { transform: scale(1.05); }
+
+    /* SECTIONS */
+    section { padding: 4rem 5%; }
+    section h2 { text-align: center; margin-bottom: 2rem; font-size: 2rem; color: #ff8a00; }
+
+    /* GRID CARDS */
+    .grid { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); }
+    .card {
+      background: rgba(255,255,255,0.05); padding: 2rem;
+      border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      transform: translateY(30px); opacity: 0; transition: all 0.8s ease;
+    }
+    .card.show { transform: translateY(0); opacity: 1; }
+    .card h3 { margin-bottom: 1rem; color: #e52e71; }
+
+    /* CONTACT FORM */
+    form {
+      max-width: 600px; margin: auto; display: flex; flex-direction: column; gap: 1rem;
+    }
+    input, textarea {
+      padding: 0.8rem; border: none; border-radius: 10px;
+      background: rgba(255,255,255,0.1); color: white;
+    }
+    input:focus, textarea:focus { outline: 2px solid #e52e71; }
+    button {
+      background: linear-gradient(45deg, #ff8a00, #e52e71);
+      border: none; padding: 0.8rem; border-radius: 30px;
+      color: white; font-weight: bold; cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    button:hover { transform: translateY(-2px); }
+
+    /* FOOTER */
+    footer { text-align: center; padding: 2rem; background: rgba(0,0,0,0.6); }
+
+    /* RESPONSIVE */
+    @media (max-width:768px) {
+      nav ul { display: none; }
+      .hero-text h1 { font-size: 2rem; }
+      .hero-image img { width: 200px; height: 200px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <h1>Flourish</h1>
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-text">
+      <h1>Hello, I'm <span class="highlight">Flourish Okafor</span></h1>
+      <p>A passionate <b>Full-Stack Programmer</b> specializing in building and hosting websites.</p>
+      <a href="#contact" class="btn">Hire Me</a>
+    </div>
+    <div class="hero-image">
+      <img src="pic.jpg" alt="Flourish Okafor">
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>My Skills</h2>
+    <div class="grid">
+      <div class="card"><h3>Frontend</h3><p>React, HTML, CSS, JavaScript</p></div>
+      <div class="card"><h3>Backend</h3><p>Python, Node.js</p></div>
+      <div class="card"><h3>Hosting</h3><p>Web deployment & hosting</p></div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <h2>My Services</h2>
+    <div class="grid">
+      <div class="card"><h3>Web Development</h3><p>Responsive and modern websites.</p></div>
+      <div class="card"><h3>Hosting</h3><p>Reliable and secure web hosting services.</p></div>
+      <div class="card"><h3>Consulting</h3><p>Helping businesses grow digitally.</p></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="grid">
+      <div class="card"><h3>Green Website</h3></div>
+      <div class="card"><h3>E-Commerce Website</h3></div>
+      <div class="card"><h3>E-Learning Website</h3></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form onsubmit="return validateForm(event)">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Flourish Okafor | Portfolio</p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    // Animate cards on scroll
+    const cards = document.querySelectorAll('.card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2 });
+    cards.forEach(card => observer.observe(card));
+
+    // Form Validation
+    function validateForm(e){
+      e.preventDefault();
+      const name=document.getElementById('name').value.trim();
+      const email=document.getElementById('email').value.trim();
+      const message=document.getElementById('message').value.trim();
+      if(!name || !email || !message){
+        alert("Please fill all fields!");
+        return false;
+      }
+      alert("Thank you "+name+", your message has been sent!");
+      e.target.reset();
+      return true;
+    }
+  </script>
+</body>
+</html>
